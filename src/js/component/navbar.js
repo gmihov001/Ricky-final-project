@@ -23,8 +23,8 @@ export const Navbar = () => {
 				<span className="navbar-toggler-icon" />
 			</button>
 
-			<div className="collapse navbar-collapse " id="navbarSupportedContent">
-				<ul className="navbar-nav mr-auto">
+			<div className="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+				<ul className="navbar-nav mr-0">
 					<form className="form-inline my-2 my-lg-0">
 						<input
 							className="form-control mr-sm-2"
