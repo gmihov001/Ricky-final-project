@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			favorites: [],
 			demo: [
 				{
 					title: "FIRST",
@@ -37,6 +38,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+			},
+			addFavorites: name => {
+				let tempStore = getStore();
+				let newFavorite = { name: name };
+
+				tempStore.favorites.push(newFavorite);
+				setStore({ tempStore });
+			},
+
+			deleteFromFavorites: e => {
+				let { favorites } = getStore();
+				setStore({ favorites: favorites.filter(favorite => favorite.name != e.name) });
 			}
 		}
 	};
